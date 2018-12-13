@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobsBoard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'all', jobs_path %></li>
+          <% Category.all.each do |cat| %>
+            <li><%= link_to cat.name, jobs_path(category: cat) %></li>
+          <% end %>
+        </ul>
+      </nav>
+    
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="well col-lg-6 col-lg-offset-3">
+    <h1 class="page-header"><%= @job.title %></h1>
+    <h3><%= @job.category.name %></h3>
+    <p><%= @job.description %></p>
+    <p><%= @job.company %></p>
+    <p><%= @job.url %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="well col-lg-6 col-lg-offset-3">
+    <%= link_to jobs_path do %>
+      <button type="button" class="btn btn-primary">All Jobs</button>
+    <% end %>
+
+    <div class="pull-right">
+      <%= link_to new_job_path do %>
+        <button type="button" class="btn btn-success">New</button>
+      <% end %>
+      <%= link_to edit_job_path(@job) do %>
+        <button type="button" class="btn btn-warning">Edit</button>
+      <% end %>
+      <%= link_to @job, method: :delete do %>
+        <button type="button" class="btn btn-danger">Delete</button>
+      <% end %>
+    </div>
+</div>

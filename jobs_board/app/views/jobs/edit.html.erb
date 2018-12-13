@@ -1,0 +1,12 @@
+<%= render 'form' %>
+
+<div class="row">
+  <div class="well col-lg-6 col-lg-offset-3">
+    <%= link_to @job do %>
+      <button type="button" class="btn btn-primary">All Jobs</button>
+    <% end %>
+    <%= link_to @job do %>
+      <button type="button" class="btn btn-danger pull-right">Discard</button>
+    <% end %>
+  </div>
+</div>

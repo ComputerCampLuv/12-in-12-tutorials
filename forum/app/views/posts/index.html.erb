@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+  <p>
+    <%= link_to post.title, post %> : 
+    <% if post.user == current_user %>
+      You
+    <% else %>
+      <%= post.user.username %>
+    <% end %>
+  </p>
+<% end %>
+
+<br><hr>
+<p>
+  <%= link_to 'new', new_post_path %>
+</p>

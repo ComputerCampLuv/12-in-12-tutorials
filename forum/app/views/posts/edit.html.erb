@@ -1,0 +1,9 @@
+<%= render 'form' %>
+
+<br><hr>
+<p>
+  <%= link_to 'home', posts_path %> | 
+  <%= link_to 'new', new_post_path %> | 
+  <%= link_to 'show', @post %> | 
+  <%= link_to 'delete', @post, method: :delete %>
+</p>

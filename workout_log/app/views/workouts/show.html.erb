@@ -1,0 +1,19 @@
+<br>
+
+<h1 class="text-center text-monospace">Workout Detail</h1>
+
+<br>
+
+<%= render partial: 'display', locals: {workout: @workout} %>
+
+<nav class="links">
+  <div>
+    <%= link_to 'Back', workouts_path, class: "btn btn-dark" %>
+    <%= link_to 'edit', edit_workout_path, class: "btn btn-outline-warning float-right" %>
+  </div>
+  <br><br>
+</nav>
+
+<%= render @workout.exercises %>
+
+<%= render '/exercises/form' %>

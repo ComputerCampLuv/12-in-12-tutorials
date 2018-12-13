@@ -1,0 +1,8 @@
+<div class="card bg-light mb-3">
+  <h3 class="card-header"><%= workout.date.strftime("%a %d %B %Y") %></h3>
+  <div class="card-body">
+    <p><strong>Type of Workout:</strong> <%= workout.workout_type %></p>
+    <p><strong>Mood:</strong> <%= workout.mood %></p>
+    <p><strong>Duration:</strong> <%= workout.length %> mins</p>
+  </div>
+</div>

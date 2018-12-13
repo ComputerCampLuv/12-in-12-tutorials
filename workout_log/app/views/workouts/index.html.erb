@@ -1,0 +1,17 @@
+<br>
+
+<h1 class="text-center text-monospace">All Workouts</h1>
+
+<br>
+
+<% @workouts.each do |workout| %>
+  <%= render partial: 'display', locals: {workout: workout} %>
+  <nav class="links">
+    <div>
+      <%= link_to 'Show', workout, class: "btn btn-dark" %>
+      <%= link_to 'Edit', edit_workout_path(workout), class: "btn btn-dark" %>
+      <%= link_to 'Delete', workout, method: :delete, class: "btn btn-outline-danger float-right" %>
+    </div>
+    <br><br>
+  </nav>
+<% end %>

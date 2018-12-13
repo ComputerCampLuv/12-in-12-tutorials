@@ -1,0 +1,16 @@
+<h1 class="text-center text-monospace">Edit previous workout</h1>
+
+<br>
+
+<%= render 'form' %>
+
+<nav class="links">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div>
+        <%= link_to 'Back', @workout, class: "btn btn-dark" %>
+        <%= link_to 'Delete', @workout, method: :delete, class: "btn btn-outline-danger float-right" %>
+      </div>
+    </div>
+  </div>
+</nav>

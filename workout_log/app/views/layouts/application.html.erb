@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WorkoutLog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'Workout Log', workouts_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'New Workout', new_workout_path, class: "nav-link" %>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          boo hiss we no like colour
+        </span>
+      </div>
+    </nav>
+
+    <br>
+
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-primary text-center" %>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+  </body>
+</html>

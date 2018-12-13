@@ -1,0 +1,8 @@
+#pins.transitions-enabled
+	- @pins.each do |pin|
+		.box.panel.panel-default
+			= link_to (image_tag pin.image.variant rotate: "90"), pin
+			%h2= pin.title
+			%p.user
+			Submitted by
+			= pin.user.email

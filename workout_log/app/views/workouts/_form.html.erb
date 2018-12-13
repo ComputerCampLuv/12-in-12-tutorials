@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="card col-lg-8 offset-lg-2 bg-light mb-3">
+    <%= simple_form_for(@workout, html: { class: 'form-group' }) do |f| %>
+      <br><%= f.date_field :date, class: "form-control" %>
+      <br><%= f.text_field :workout_type, placeholder: "What type of workout?", class: "form-control" %>
+      <br><%= f.text_field :mood, placeholder: "How were you feeling?", class: "form-control" %>
+      <br><%= f.number_field :length, placeholder: "Workout duration? (in minutes)", class: "form-control" %>
+      <br><%= f.button :submit, class: "btn btn-outline-success float-right" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+  

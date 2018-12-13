@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="sidebar">
+      <div id="logo">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.svg" %>
+        <% end %>
+      </div>
+
+      <ul>
+        <li class="category">Websites</li>
+        <li><%= link_to "Blog", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+      </ul>
+
+      <ul>
+        <li class="category">Social</li>
+        <li>Twitter</li>
+        <li>Instagram</li>
+        <li>Github</li>
+        <li>Email</li>
+      </ul>
+      
+      <% if !user_signed_in? %>
+        <p class="sign_in"><%= link_to 'Admin Login', user_session_path %></p>
+      <% end %>
+
+    </div>
+
+    <div id="main_content">
+
+      <div id="header">
+        <% if current_page? root_path %>
+          <p>All Posts</p>
+        <% elsif current_page? about_path %>
+          <p>About</p>
+        <% else %>
+          <p><%= link_to 'Home', root_path %></p>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <div class="buttons">
+            <button class="button"><%= link_to 'New Post', new_post_path %></button>
+            <button class="button"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></button>
+          </div>
+        <% end %>
+      </div>
+
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert") %>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+
+  </body>
+  
+</html>

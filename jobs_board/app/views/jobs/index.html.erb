@@ -1,0 +1,7 @@
+<% @jobs.each do |job| %>
+  <h1 class="page-header"><%= link_to job.title, job %></h1>
+  <p><%= job.company %></p>
+  <br>
+<% end %>
+<br>
+<button type="button" class="btn btn-lg btn-secondary"><%= link_to 'new posting', new_job_path %></button>

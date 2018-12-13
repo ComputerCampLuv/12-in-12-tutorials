@@ -1,0 +1,13 @@
+
+<div class="card bg-light mb-3">
+  <h3 class="card-header">add an exercise...</h3>
+  <div class="col-lg-12">
+    <%= simple_form_for([@workout, @workout.exercises.build], html: { class: 'form-group' }) do |f| %>
+      <br><%= f.text_field :name, placeholder: "Type of excerise", class: "form-control" %>
+      <br><%= f.number_field :sets, placeholder: "Sets completed?", class: "form-control" %>
+      <br><%= f.number_field :reps, placeholder: "Reps per set?", class: "form-control" %>
+      <br><%= f.button :submit, class: "btn btn-outline-success float-right" %>
+    <% end %>
+  </div>
+  <br>
+</div>
